@@ -11,12 +11,11 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
 
-Route::get('users', function()
-{
-    return 'Users!';
-});
+Route::get('login', 'AuthController@showLogin');
+
+Route::post('login', 'AuthController@postLogin');
+
+Route::get('logout', 'AuthController@getLogout');
+
